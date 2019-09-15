@@ -1,0 +1,31 @@
+<!-- {{contacts | json}} -->
+<table class="table table-striped table-bordered  table-responsive">
+  <tr>
+    <th>Name</th>
+    <th>Group</th>
+  </tr>
+  <tr *ngFor="let c of contacts">
+    <td>{{c.name}}</td>
+    <td>{{c.groupName}}</td>
+  </tr>
+</table>
+
+<form action="" class="container">
+  <div class="form-group">
+    <label for="contactName">Name</label>
+    <input class="form-control col-md-4" [(ngModel)]="newContact.name" id="contactName" name="newcontactname">
+  </div>
+  <div class="form-group">
+    <label for="group">Group</label>
+    <select id="group" class="form-control col-md-4">
+      <option *ngFor="let g of groups" value="{{g.groupId}}">{{g.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="phone">Group Name</label>
+    <input class="form-control col-md-4" [(ngModel)]="newContact.phone" id="phone" name="newcontactph">
+  </div>
+  <div class="form-group">
+    <button>Create Contact</button>
+  </div>
+</form>

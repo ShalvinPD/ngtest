@@ -1,0 +1,19 @@
+<table class="table table-striped table-bordered  table-responsive">
+  <tr>
+    <th>Name</th>
+  </tr>
+
+  <tr *ngFor="let c of groups">
+    <td>{{c.name}}</td>
+  </tr>
+</table>
+
+<form (ngSubmit)="createGroup()" class="container">
+  <div class="form-group">
+    <label for="groupName">Group Name</label>
+    <input class="form-control col-md-4" id="groupName" [(ngModel)]="newGroup.name" name="groupName">
+  </div>
+  <div class="form-group">
+    <button>Create Group</button>
+  </div>
+</form>
